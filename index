@@ -1,9 +1,12 @@
 import React from 'react';
+// 1. IMPORT THE IMAGE AS A VARIABLE
+import spitfire from './spitfire.png'; 
 
 export default function Landing() {
   return (
     <div style={{
-      backgroundImage: 'url(/spitfire.png)',
+      // 2. USE THE VARIABLE IN THE URL
+      backgroundImage: `url(${spitfire})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -14,6 +17,7 @@ export default function Landing() {
       flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif'
     }}>
+      {/* ... the rest of your code ... */}
       <div style={{ backgroundColor: 'rgba(15, 17, 21, 0.75)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         
         <header style={{
