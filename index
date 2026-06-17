@@ -5,9 +5,8 @@ import spitfire from './spitfire.png';
 export default function Landing() {
   return (
     <div style={{
-      // 2. USE THE VARIABLE IN THE URL
-// Temporarily replace your background line with this to test:
-backgroundImage: 'url("https://raw.githubusercontent.com/Lestercito12570/investingcopilot.gardenshedclay.com/main/spitfire.png")',
+      // 2. USE THE VARIABLE INSIDE THE URL TEMPLATE STRING
+      backgroundImage: `url(${spitfire})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -18,7 +17,7 @@ backgroundImage: 'url("https://raw.githubusercontent.com/Lestercito12570/investi
       flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif'
     }}>
-      {/* ... the rest of your code ... */}
+      {/* EVERYTHING ELSE REMAINS THE SAME */}
       <div style={{ backgroundColor: 'rgba(15, 17, 21, 0.75)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         
         <header style={{
@@ -35,7 +34,6 @@ backgroundImage: 'url("https://raw.githubusercontent.com/Lestercito12570/investi
         </header>
 
         <main style={{ maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem', flex: 1, textAlign: 'center' }}>
-          {/* Focused Hero Messaging */}
           <section style={{ marginBottom: '4rem' }}>
             <h1 style={{ fontSize: '3.5rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
               Your Strategic Planning & Analysis Partner
@@ -58,7 +56,6 @@ backgroundImage: 'url("https://raw.githubusercontent.com/Lestercito12570/investi
             </a>
           </section>
 
-          {/* Corrected Trust Panels */}
           <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
             {[
               { 
