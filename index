@@ -1,253 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Optimization (Fixes "App name does not appear in description" & "Description is too vague" from image_364206.png) -->
-    <title>Investing Copilot | Portfolio & Asset Analytics Terminal</title>
-    <meta name="description" content="Investing Copilot is a professional software-as-a-service (SaaS) platform built by Garden Shed Clay LLC, providing high-density data visualization, tracking tools, and technical portfolio analytics for retail investors focused on hard assets and equities.">
-    <meta name="keywords" content="Investing Copilot, Garden Shed Clay, portfolio tracker, asset analytics, data visualization workstation, SaaS investment tool">
-    
-    <style>
-        :root {
-            --bg-color: #0f1115;
-            --panel-bg: #161920;
-            --accent-color: #6366f1;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-color: #1f2937;
-            --success-green: #10b981;
-        }
+import React from 'react';
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+export default function Landing() {
+  return (
+    <div style={{
+      // This applies your new background image
+      backgroundImage: 'url(spitfire.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: '#0f1115', // Fallback color
+      color: '#f3f4f6',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      {/* Overlay to ensure text readability against the complex image */}
+      <div style={{ backgroundColor: 'rgba(15, 17, 21, 0.7)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        
+        <header style={{
+          padding: '1rem 2rem',
+          borderBottom: '1px solid rgba(31, 41, 55, 0.5)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          backgroundColor: 'rgba(22, 25, 32, 0.8)',
+          position: 'sticky',
+          top: 0,
+          zIndex: 100
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <img src="logo.png" alt="Investing Copilot Logo" style={{ height: '32px', width: 'auto' }} />
+            <div style={{ fontWeight: 700, fontSize: '1.25rem' }}>Investing<span>Copilot</span></div>
+          </div>
+          <nav>
+            <a href="#about" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1.5rem' }}>About</a>
+            <a href="#security" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1.5rem' }}>Security</a>
+            <a href="#contact" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1.5rem' }}>Contact</a>
+          </nav>
+        </header>
 
-        header {
-            padding: 1rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--panel-bg);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .brand-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .app-logo {
-            height: 32px;
-            width: auto;
-            display: block;
-        }
-
-        .brand {
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.025em;
-        }
-
-        .brand span {
-            color: var(--accent-color);
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-left: 1.5rem;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--text-main);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 5rem 0 3rem 0;
-            text-align: center;
-        }
-
-        .tagline {
-            color: var(--accent-color);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            margin: 0 0 1.5rem 0;
-            line-height: 1.15;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.15rem;
-            line-height: 1.6;
-            margin: 0 auto 2.5rem auto;
-            max-width: 600px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background 0.2s ease;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-        }
-
-        .cta-button:hover {
-            background-color: #4f46e5;
-        }
-
-        /* Trust & Details Layout (Fixes "App is missing trust pages" from image_364206.png) */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .trust-card {
-            background-color: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: left;
-        }
-
-        .trust-card h2 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            letter-spacing: -0.01em;
-        }
-
-        .trust-card p, .trust-card address {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            font-style: normal;
-        }
-
-        .security-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--success-green);
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
-        footer {
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            background-color: var(--panel-bg);
-            margin-top: auto;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="brand-logo-container">
-            <img src="logo.png" alt="Investing Copilot Logo" class="app-logo">
-            <div class="brand">Investing<span>Copilot</span></div>
-        </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#security">Security</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <main class="container">
-        <!-- Main Hero Entry -->
-        <section class="hero">
-            <div class="tagline">Workstation-Oriented Data Visualization</div>
-            <h1>High-Density Analytics for Hard Assets & Equities</h1>
-            <p>
-                Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
+        <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', flex: 1 }}>
+          <section style={{ padding: '5rem 0 3rem 0', textAlign: 'center' }}>
+            <div style={{ color: '#6366f1', textTransform: 'uppercase', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '1rem' }}>
+              Workstation-Oriented Data Visualization
+            </div>
+            <h1 style={{ fontSize: '3rem', fontWeight: 800, letterSpacing: '-0.03em', margin: '0 0 1.5rem 0' }}>
+              High-Density Analytics for Hard Assets & Equities
+            </h1>
+            <p style={{ color: '#d1d5db', fontSize: '1.15rem', lineHeight: 1.6, margin: '0 auto 2.5rem auto', maxWidth: '600px' }}>
+              Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
             </p>
-            <a href="https://investingcopilot.gardenshedclay.com/login" class="cta-button">
-                Launch Terminal
+            <a href="/login" style={{
+              display: 'inline-block',
+              backgroundColor: '#6366f1',
+              color: '#ffffff',
+              textDecoration: 'none',
+              padding: '0.85rem 2rem',
+              borderRadius: '6px',
+              fontWeight: 600,
+              fontSize: '1rem',
+              boxShadow: '0 4px 12px rgba(99, 102, 241, 0.4)'
+            }}>
+              Launch Terminal
             </a>
-        </section>
+          </section>
 
-        <!-- Trust Information Sections -->
-        <section class="trust-grid">
-            <!-- About Section -->
-            <div class="trust-card" id="about">
-                <h2>About Investing Copilot</h2>
-                <p>
-                    Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking. We emphasize top-line data clarity over trading noise, giving investors full transparency over hard asset values and long-term equities.
+          {/* Trust Panels remain consistent */}
+          <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', padding: '4rem 0' }}>
+            {['About Investing Copilot', 'Secure Integration', 'Contact & Corporate'].map((title, i) => (
+              <div key={i} style={{ backgroundColor: 'rgba(22, 25, 32, 0.9)', border: '1px solid #1f2937', padding: '2rem', borderRadius: '8px' }}>
+                <h2 style={{ fontSize: '1.2rem', marginTop: 0 }}>{title}</h2>
+                <p style={{ color: '#9ca3af', fontSize: '0.95rem' }}>
+                  {i === 0 ? "Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking." : 
+                   i === 1 ? "Your security dictates our framework. Financial transactions are brokered via enterprise-grade tokenization." : 
+                   "Developed in Philadelphia by Garden Shed Clay LLC. Reach out for platform support at support@gardenshedclay.com"}
                 </p>
-            </div>
-
-            <!-- Verified Infrastructure Security Section -->
-            <div class="trust-card" id="security">
-                <h2>Secure Integration</h2>
-                <p>
-                    Your security dictates our framework. Financial transactions and data flows are natively brokered utilizing enterprise-grade tokenization and direct infrastructure pipelines.
-                </p>
-                <div class="security-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    Stripe Verified Partner
-                </div>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="trust-card" id="contact">
-                <h2>Contact & Corporate</h2>
-                <p>
-                    Developed and operated transparently in Philadelphia by Garden Shed Clay LLC. Reach out directly for operational inquiries or terminal platform support.
-                </p>
-                <address style="margin-top: 1rem;">
-                    <strong>Support:</strong> support@gardenshedclay.com
-                </address>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2026 Garden Shed Clay LLC. All rights reserved.
-    </footer>
-
-</body>
-</html>
+              </div>
+            ))}
+          </section>
+        </main>
+      </div>
+    </div>
+  );
+}
