@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,12 +26,24 @@
         }
 
         header {
-            padding: 1.5rem 2rem;
+            padding: 1rem 2rem;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: var(--panel-bg);
+        }
+
+        .brand-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .app-logo {
+            height: 32px; /* You can adjust this height to match your logo asset's proportions */
+            width: auto;
+            display: block;
         }
 
         .brand {
@@ -77,7 +89,7 @@
             color: var(--text-muted);
             font-size: 1.15rem;
             line-height: 1.6;
-            margin-0: 0 0 2.5rem 0;
+            margin: 0 0 2.5rem 0;
             max-width: 600px;
         }
 
@@ -111,10 +123,27 @@
 <body>
 
     <header>
-        <div class="brand">Investing<span>Copilot</span></div>
+        <div class="brand-logo-container">
+            <img src="logo.png" alt="Investing Copilot Logo" class="app-logo">
+            <div class="brand">Investing<span>Copilot</span></div>
+        </div>
     </header>
 
     <main>
         <div class="tagline">Workstation-Oriented Data Visualization</div>
         <h1>High-Density Analytics for Hard Assets & Equities</h1>
-        <p
+        <p>
+            Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
+        </p>
+        
+        <a href="https://investingcopilot.gardenshedclay.com/login" class="cta-button">
+            Launch Terminal
+        </a>
+    </main>
+
+    <footer>
+        &copy; 2026 Garden Shed Clay LLC. All rights reserved.
+    </footer>
+
+</body>
+</html>
