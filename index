@@ -1,12 +1,9 @@
 import React from 'react';
-// 1. IMPORT THE IMAGE AS A VARIABLE
-import spitfire from './spitfire.png'; 
 
 export default function Landing() {
   return (
     <div style={{
-      // 2. USE THE VARIABLE INSIDE THE URL TEMPLATE STRING
-      backgroundImage: `url(${spitfire})`,
+      backgroundImage: 'url(/spitfire.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -17,7 +14,6 @@ export default function Landing() {
       flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif'
     }}>
-      {/* EVERYTHING ELSE REMAINS THE SAME */}
       <div style={{ backgroundColor: 'rgba(15, 17, 21, 0.75)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         
         <header style={{
@@ -28,7 +24,7 @@ export default function Landing() {
           backgroundColor: 'rgba(22, 25, 32, 0.6)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <img src="logo.png" alt="Investing Copilot Logo" style={{ height: '32px', width: 'auto' }} />
+            <img src="/logo.png" alt="Investing Copilot Logo" style={{ height: '32px', width: 'auto' }} />
             <div style={{ fontWeight: 700, fontSize: '1.25rem' }}>Investing<span style={{ color: '#6366f1' }}>Copilot</span></div>
           </div>
         </header>
@@ -36,10 +32,10 @@ export default function Landing() {
         <main style={{ maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem', flex: 1, textAlign: 'center' }}>
           <section style={{ marginBottom: '4rem' }}>
             <h1 style={{ fontSize: '3.5rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
-              Your Strategic Planning & Analysis Partner
+              High-Density Analytics for Hard Assets & Equities
             </h1>
             <p style={{ color: '#e5e7eb', fontSize: '1.25rem', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>
-              Investing Copilot is designed to guide your financial planning. Gain the clarity you need to map your goals and navigate your portfolio with confidence.
+              Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
             </p>
             <a href="/login" style={{
               display: 'inline-block',
@@ -52,7 +48,7 @@ export default function Landing() {
               fontSize: '1.1rem',
               boxShadow: '0 4px 20px rgba(99, 102, 241, 0.5)'
             }}>
-              Launch Your Copilot
+              Launch Terminal
             </a>
           </section>
 
@@ -64,11 +60,11 @@ export default function Landing() {
               },
               { 
                 title: "Secure Integration", 
-                desc: "Your security dictates our framework. Financial transactions are brokered via enterprise-grade tokenization." 
+                desc: "Your security dictates our framework. Financial transactions and data flows are natively brokered utilizing enterprise-grade tokenization and direct infrastructure pipelines." 
               },
               { 
                 title: "Contact & Corporate", 
-                desc: "Developed in Philadelphia by Garden Shed Clay LLC. Reach out for platform support at support@gardenshedclay.com" 
+                desc: "Developed and operated transparently in Philadelphia by Garden Shed Clay LLC. Reach out directly for operational inquiries or terminal platform support. Support: support@gardenshedclay.com" 
               }
             ].map((item, i) => (
               <div key={i} style={{ backgroundColor: 'rgba(22, 25, 32, 0.8)', border: '1px solid #374151', padding: '1.5rem', borderRadius: '12px' }}>
