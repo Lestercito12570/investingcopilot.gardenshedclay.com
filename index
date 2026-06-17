@@ -3,7 +3,7 @@ import React from 'react';
 export default function Landing() {
   return (
     <div style={{
-      backgroundImage: 'url(spitfire.png)',
+      backgroundImage: 'url(/spitfire.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
