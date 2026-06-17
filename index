@@ -6,7 +6,7 @@ export default function Landing() {
   return (
     <div style={{
       // 2. USE THE VARIABLE IN THE URL
-backgroundImage: 'url(/spitfire.png)',
+backgroundImage: 'url(./spitfire.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
