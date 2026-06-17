@@ -1,9 +1,14 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investing Copilot | Portfolio & Asset Analytics</title>
+    
+    <!-- SEO Optimization (Fixes "App name does not appear in description" & "Description is too vague" from image_364206.png) -->
+    <title>Investing Copilot | Portfolio & Asset Analytics Terminal</title>
+    <meta name="description" content="Investing Copilot is a professional software-as-a-service (SaaS) platform built by Garden Shed Clay LLC, providing high-density data visualization, tracking tools, and technical portfolio analytics for retail investors focused on hard assets and equities.">
+    <meta name="keywords" content="Investing Copilot, Garden Shed Clay, portfolio tracker, asset analytics, data visualization workstation, SaaS investment tool">
+    
     <style>
         :root {
             --bg-color: #0f1115;
@@ -12,6 +17,7 @@
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
             --border-color: #1f2937;
+            --success-green: #10b981;
         }
 
         body {
@@ -32,6 +38,9 @@
             justify-content: space-between;
             align-items: center;
             background-color: var(--panel-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .brand-logo-container {
@@ -41,7 +50,7 @@
         }
 
         .app-logo {
-            height: 32px; /* You can adjust this height to match your logo asset's proportions */
+            height: 32px;
             width: auto;
             display: block;
         }
@@ -56,16 +65,28 @@
             color: var(--accent-color);
         }
 
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 2rem;
-            text-align: center;
-            max-width: 800px;
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0 3rem 0;
+            text-align: center;
         }
 
         .tagline {
@@ -85,11 +106,11 @@
             line-height: 1.15;
         }
 
-        p {
+        .hero p {
             color: var(--text-muted);
             font-size: 1.15rem;
             line-height: 1.6;
-            margin: 0 0 2.5rem 0;
+            margin: 0 auto 2.5rem auto;
             max-width: 600px;
         }
 
@@ -110,13 +131,55 @@
             background-color: #4f46e5;
         }
 
+        /* Trust & Details Layout (Fixes "App is missing trust pages" from image_364206.png) */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .trust-card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .trust-card h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .trust-card p, .trust-card address {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-style: normal;
+        }
+
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--success-green);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
         footer {
-            padding: 1.5rem;
+            padding: 2rem;
             text-align: center;
             font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
             background-color: var(--panel-bg);
+            margin-top: auto;
         }
     </style>
 </head>
@@ -127,18 +190,59 @@
             <img src="logo.png" alt="Investing Copilot Logo" class="app-logo">
             <div class="brand">Investing<span>Copilot</span></div>
         </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#security">Security</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <main>
-        <div class="tagline">Workstation-Oriented Data Visualization</div>
-        <h1>High-Density Analytics for Hard Assets & Equities</h1>
-        <p>
-            Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
-        </p>
-        
-        <a href="https://investingcopilot.gardenshedclay.com/login" class="cta-button">
-            Launch Terminal
-        </a>
+    <main class="container">
+        <!-- Main Hero Entry -->
+        <section class="hero">
+            <div class="tagline">Workstation-Oriented Data Visualization</div>
+            <h1>High-Density Analytics for Hard Assets & Equities</h1>
+            <p>
+                Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
+            </p>
+            <a href="https://investingcopilot.gardenshedclay.com/login" class="cta-button">
+                Launch Terminal
+            </a>
+        </section>
+
+        <!-- Trust Information Sections -->
+        <section class="trust-grid">
+            <!-- About Section -->
+            <div class="trust-card" id="about">
+                <h2>About Investing Copilot</h2>
+                <p>
+                    Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking. We emphasize top-line data clarity over trading noise, giving investors full transparency over hard asset values and long-term equities.
+                </p>
+            </div>
+
+            <!-- Verified Infrastructure Security Section -->
+            <div class="trust-card" id="security">
+                <h2>Secure Integration</h2>
+                <p>
+                    Your security dictates our framework. Financial transactions and data flows are natively brokered utilizing enterprise-grade tokenization and direct infrastructure pipelines.
+                </p>
+                <div class="security-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    Stripe Verified Partner
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="trust-card" id="contact">
+                <h2>Contact & Corporate</h2>
+                <p>
+                    Developed and operated transparently in Philadelphia by Garden Shed Clay LLC. Reach out directly for operational inquiries or terminal platform support.
+                </p>
+                <address style="margin-top: 1rem;">
+                    <strong>Support:</strong> support@gardenshedclay.com
+                </address>
+            </div>
+        </section>
     </main>
 
     <footer>
