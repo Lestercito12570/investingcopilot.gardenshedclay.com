@@ -3,79 +3,66 @@ import React from 'react';
 export default function Landing() {
   return (
     <div style={{
-      // This applies your new background image
       backgroundImage: 'url(spitfire.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      backgroundColor: '#0f1115', // Fallback color
+      backgroundColor: '#0f1115',
       color: '#f3f4f6',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif'
     }}>
-      {/* Overlay to ensure text readability against the complex image */}
-      <div style={{ backgroundColor: 'rgba(15, 17, 21, 0.7)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ backgroundColor: 'rgba(15, 17, 21, 0.75)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         
         <header style={{
-          padding: '1rem 2rem',
-          borderBottom: '1px solid rgba(31, 41, 55, 0.5)',
+          padding: '1.5rem 2rem',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          backgroundColor: 'rgba(22, 25, 32, 0.8)',
-          position: 'sticky',
-          top: 0,
-          zIndex: 100
+          backgroundColor: 'rgba(22, 25, 32, 0.6)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <img src="logo.png" alt="Investing Copilot Logo" style={{ height: '32px', width: 'auto' }} />
-            <div style={{ fontWeight: 700, fontSize: '1.25rem' }}>Investing<span>Copilot</span></div>
+            <div style={{ fontWeight: 700, fontSize: '1.25rem' }}>Investing<span style={{ color: '#6366f1' }}>Copilot</span></div>
           </div>
-          <nav>
-            <a href="#about" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1.5rem' }}>About</a>
-            <a href="#security" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1.5rem' }}>Security</a>
-            <a href="#contact" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1.5rem' }}>Contact</a>
-          </nav>
         </header>
 
-        <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', flex: 1 }}>
-          <section style={{ padding: '5rem 0 3rem 0', textAlign: 'center' }}>
-            <div style={{ color: '#6366f1', textTransform: 'uppercase', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '1rem' }}>
-              Workstation-Oriented Data Visualization
-            </div>
-            <h1 style={{ fontSize: '3rem', fontWeight: 800, letterSpacing: '-0.03em', margin: '0 0 1.5rem 0' }}>
-              High-Density Analytics for Hard Assets & Equities
+        <main style={{ maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem', flex: 1, textAlign: 'center' }}>
+          {/* New Focused Messaging */}
+          <section style={{ marginBottom: '4rem' }}>
+            <h1 style={{ fontSize: '3.5rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+              Your Strategic Planning & Analysis Partner
             </h1>
-            <p style={{ color: '#d1d5db', fontSize: '1.15rem', lineHeight: 1.6, margin: '0 auto 2.5rem auto', maxWidth: '600px' }}>
-              Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
+            <p style={{ color: '#e5e7eb', fontSize: '1.25rem', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>
+              Investing Copilot is designed to guide your financial planning. Gain the clarity you need to map your goals and navigate your portfolio with confidence.
             </p>
             <a href="/login" style={{
               display: 'inline-block',
               backgroundColor: '#6366f1',
               color: '#ffffff',
               textDecoration: 'none',
-              padding: '0.85rem 2rem',
-              borderRadius: '6px',
+              padding: '1rem 2.5rem',
+              borderRadius: '8px',
               fontWeight: 600,
-              fontSize: '1rem',
-              boxShadow: '0 4px 12px rgba(99, 102, 241, 0.4)'
+              fontSize: '1.1rem',
+              boxShadow: '0 4px 20px rgba(99, 102, 241, 0.5)'
             }}>
-              Launch Terminal
+              Launch Your Copilot
             </a>
           </section>
 
-          {/* Trust Panels remain consistent */}
-          <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', padding: '4rem 0' }}>
-            {['About Investing Copilot', 'Secure Integration', 'Contact & Corporate'].map((title, i) => (
-              <div key={i} style={{ backgroundColor: 'rgba(22, 25, 32, 0.9)', border: '1px solid #1f2937', padding: '2rem', borderRadius: '8px' }}>
-                <h2 style={{ fontSize: '1.2rem', marginTop: 0 }}>{title}</h2>
-                <p style={{ color: '#9ca3af', fontSize: '0.95rem' }}>
-                  {i === 0 ? "Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking." : 
-                   i === 1 ? "Your security dictates our framework. Financial transactions are brokered via enterprise-grade tokenization." : 
-                   "Developed in Philadelphia by Garden Shed Clay LLC. Reach out for platform support at support@gardenshedclay.com"}
-                </p>
+          {/* Trust Panels */}
+          <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+            {[
+              { title: "Strategic Planning", desc: "Tools built to help you plot your course and stay aligned with your long-term objectives." },
+              { title: "Guided Analysis", desc: "Deep insights into your holdings, presented clearly to help you make informed decisions." },
+              { title: "Your Partner", desc: "Developed in Philadelphia by Garden Shed Clay LLC to be the reliable partner your portfolio needs." }
+            ].map((item, i) => (
+              <div key={i} style={{ backgroundColor: 'rgba(22, 25, 32, 0.8)', border: '1px solid #374151', padding: '1.5rem', borderRadius: '12px' }}>
+                <h3 style={{ margin: '0 0 0.5rem 0' }}>{item.title}</h3>
+                <p style={{ color: '#9ca3af', fontSize: '0.9rem', margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </section>
