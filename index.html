@@ -4,9 +4,9 @@ export default function Landing() {
   return (
     <div
       style={{
-        backgroundImage: 'url(/spitfire.png)',
+        backgroundImage: 'url("/spitfire.png")',
         backgroundSize: 'cover',
-        backgroundPosition: 'center center',
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundColor: '#0f1115',
         color: '#f3f4f6',
@@ -18,7 +18,7 @@ export default function Landing() {
     >
       <div
         style={{
-          backgroundColor: 'rgba(15,17,21,0.45)',
+          backgroundColor: 'rgba(15, 17, 21, 0.55)',
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column'
@@ -30,71 +30,29 @@ export default function Landing() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            backgroundColor: 'rgba(22,25,32,0.55)'
+            backgroundColor: 'rgba(22, 25, 32, 0.6)'
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.75rem'
-            }}
-          >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <img
               src="/logo.png"
               alt="Investing Copilot Logo"
-              style={{
-                height: '32px',
-                width: 'auto'
-              }}
+              style={{ height: '32px', width: 'auto' }}
             />
 
-            <div
-              style={{
-                fontWeight: 700,
-                fontSize: '1.25rem'
-              }}
-            >
-              Investing
-              <span style={{ color: '#6366f1' }}>
-                Copilot
-              </span>
+            <div style={{ fontWeight: 700, fontSize: '1.25rem' }}>
+              Investing<span style={{ color: '#6366f1' }}>Copilot</span>
             </div>
           </div>
 
-          <nav
-            style={{
-              display: 'flex',
-              gap: '2rem'
-            }}
-          >
-            <a
-              href="#about"
-              style={{
-                color: '#d1d5db',
-                textDecoration: 'none'
-              }}
-            >
+          <nav style={{ display: 'flex', gap: '1.5rem' }}>
+            <a href="#about" style={{ color: '#d1d5db', textDecoration: 'none' }}>
               About
             </a>
-
-            <a
-              href="#security"
-              style={{
-                color: '#d1d5db',
-                textDecoration: 'none'
-              }}
-            >
+            <a href="#security" style={{ color: '#d1d5db', textDecoration: 'none' }}>
               Security
             </a>
-
-            <a
-              href="#contact"
-              style={{
-                color: '#d1d5db',
-                textDecoration: 'none'
-              }}
-            >
+            <a href="#contact" style={{ color: '#d1d5db', textDecoration: 'none' }}>
               Contact
             </a>
           </nav>
@@ -110,6 +68,19 @@ export default function Landing() {
           }}
         >
           <section style={{ marginBottom: '4rem' }}>
+            <div
+              style={{
+                color: '#6366f1',
+                textTransform: 'uppercase',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                marginBottom: '1rem'
+              }}
+            >
+              Workstation-Oriented Data Visualization
+            </div>
+
             <h1
               style={{
                 fontSize: '3.5rem',
@@ -131,13 +102,13 @@ export default function Landing() {
                 margin: '0 auto 2.5rem auto'
               }}
             >
-              Track your holdings, map your long-term position metrics,
-              and gain complete portfolio clarity without navigational
-              noise or retail bubble hype.
+              Track your holdings, map your long-term position metrics, and gain
+              complete portfolio clarity without navigational noise or retail
+              bubble hype.
             </p>
 
             <a
-              href="/login"
+              href="#"
               style={{
                 display: 'inline-block',
                 backgroundColor: '#6366f1',
@@ -147,7 +118,7 @@ export default function Landing() {
                 borderRadius: '8px',
                 fontWeight: 600,
                 fontSize: '1.1rem',
-                boxShadow: '0 4px 20px rgba(99,102,241,0.5)'
+                boxShadow: '0 4px 20px rgba(99, 102, 241, 0.5)'
               }}
             >
               Launch Terminal
@@ -157,44 +128,39 @@ export default function Landing() {
           <section
             style={{
               display: 'grid',
-              gridTemplateColumns:
-                'repeat(auto-fit, minmax(250px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
               gap: '1.5rem'
             }}
           >
             {[
               {
+                id: 'about',
                 title: 'About Investing Copilot',
-                desc:
-                  'Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking. We emphasize top-line data clarity over trading noise, giving investors full transparency over hard asset values and long-term equities.'
+                desc: 'Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking. We emphasize top-line data clarity over trading noise, giving investors full transparency over hard asset values and long-term equities.'
               },
               {
+                id: 'security',
                 title: 'Secure Integration',
-                desc:
-                  'Your security dictates our framework. Financial transactions and data flows are natively brokered utilizing enterprise-grade tokenization and direct infrastructure pipelines.'
+                desc: 'Your security dictates our framework. Financial transactions and data flows are natively brokered utilizing enterprise-grade tokenization and direct infrastructure pipelines.'
               },
               {
+                id: 'contact',
                 title: 'Contact & Corporate',
-                desc:
-                  'Developed and operated transparently in Philadelphia by Garden Shed Clay LLC. Reach out directly for operational inquiries or terminal platform support. Support: support@gardenshedclay.com'
+                desc: 'Developed and operated transparently in Philadelphia by Garden Shed Clay LLC. Reach out directly for operational inquiries or terminal platform support. Support: support@gardenshedclay.com'
               }
             ].map((item, i) => (
               <div
+                id={item.id}
                 key={i}
                 style={{
-                  backgroundColor: 'rgba(22,25,32,0.8)',
+                  backgroundColor: 'rgba(22, 25, 32, 0.8)',
                   border: '1px solid #374151',
                   padding: '1.5rem',
-                  borderRadius: '12px'
+                  borderRadius: '12px',
+                  textAlign: 'left'
                 }}
               >
-                <h3
-                  style={{
-                    margin: '0 0 0.5rem 0'
-                  }}
-                >
-                  {item.title}
-                </h3>
+                <h3 style={{ margin: '0 0 0.5rem 0' }}>{item.title}</h3>
 
                 <p
                   style={{
