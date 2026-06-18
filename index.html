@@ -2,76 +2,210 @@ import React from 'react';
 
 export default function Landing() {
   return (
-    <div style={{
-      // Removed /public/ prefix
-      backgroundImage: 'url(/public/spitfire.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundColor: '#0f1115',
-      color: '#f3f4f6',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      fontFamily: 'system-ui, sans-serif'
-    }}>
-      <div style={{ backgroundColor: 'rgba(15, 17, 21, 0.75)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        
-        <header style={{
-          padding: '1.5rem 2rem',
+    <div
+      style={{
+        backgroundImage: 'url(/spitfire.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#0f1115',
+        color: '#f3f4f6',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        fontFamily: 'system-ui, sans-serif'
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: 'rgba(15,17,21,0.45)',
+          minHeight: '100vh',
           display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backgroundColor: 'rgba(22, 25, 32, 0.6)'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            {/* Removed /public/ prefix */}
-            <img src="/public/logo.png" alt="Investing Copilot Logo" style={{ height: '32px', width: 'auto' }} />
-            <div style={{ fontWeight: 700, fontSize: '1.25rem' }}>Investing<span style={{ color: '#6366f1' }}>Copilot</span></div>
+          flexDirection: 'column'
+        }}
+      >
+        <header
+          style={{
+            padding: '1.5rem 2rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            backgroundColor: 'rgba(22,25,32,0.55)'
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem'
+            }}
+          >
+            <img
+              src="/logo.png"
+              alt="Investing Copilot Logo"
+              style={{
+                height: '32px',
+                width: 'auto'
+              }}
+            />
+
+            <div
+              style={{
+                fontWeight: 700,
+                fontSize: '1.25rem'
+              }}
+            >
+              Investing
+              <span style={{ color: '#6366f1' }}>
+                Copilot
+              </span>
+            </div>
           </div>
+
+          <nav
+            style={{
+              display: 'flex',
+              gap: '2rem'
+            }}
+          >
+            <a
+              href="#about"
+              style={{
+                color: '#d1d5db',
+                textDecoration: 'none'
+              }}
+            >
+              About
+            </a>
+
+            <a
+              href="#security"
+              style={{
+                color: '#d1d5db',
+                textDecoration: 'none'
+              }}
+            >
+              Security
+            </a>
+
+            <a
+              href="#contact"
+              style={{
+                color: '#d1d5db',
+                textDecoration: 'none'
+              }}
+            >
+              Contact
+            </a>
+          </nav>
         </header>
 
-        <main style={{ maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem', flex: 1, textAlign: 'center' }}>
+        <main
+          style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            padding: '4rem 2rem',
+            flex: 1,
+            textAlign: 'center'
+          }}
+        >
           <section style={{ marginBottom: '4rem' }}>
-            <h1 style={{ fontSize: '3.5rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+            <h1
+              style={{
+                fontSize: '3.5rem',
+                fontWeight: 800,
+                letterSpacing: '-0.02em',
+                marginBottom: '1.5rem',
+                lineHeight: 1.1
+              }}
+            >
               High-Density Analytics for Hard Assets & Equities
             </h1>
-            <p style={{ color: '#e5e7eb', fontSize: '1.25rem', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>
-              Track your holdings, map your long-term position metrics, and gain complete portfolio clarity without navigational noise or retail bubble hype.
+
+            <p
+              style={{
+                color: '#e5e7eb',
+                fontSize: '1.25rem',
+                lineHeight: 1.6,
+                maxWidth: '700px',
+                margin: '0 auto 2.5rem auto'
+              }}
+            >
+              Track your holdings, map your long-term position metrics,
+              and gain complete portfolio clarity without navigational
+              noise or retail bubble hype.
             </p>
-            <a href="/login" style={{
-              display: 'inline-block',
-              backgroundColor: '#6366f1',
-              color: '#ffffff',
-              textDecoration: 'none',
-              padding: '1rem 2.5rem',
-              borderRadius: '8px',
-              fontWeight: 600,
-              fontSize: '1.1rem',
-              boxShadow: '0 4px 20px rgba(99, 102, 241, 0.5)'
-            }}>
+
+            <a
+              href="/login"
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#6366f1',
+                color: '#ffffff',
+                textDecoration: 'none',
+                padding: '1rem 2.5rem',
+                borderRadius: '8px',
+                fontWeight: 600,
+                fontSize: '1.1rem',
+                boxShadow: '0 4px 20px rgba(99,102,241,0.5)'
+              }}
+            >
               Launch Terminal
             </a>
           </section>
 
-          <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+          <section
+            style={{
+              display: 'grid',
+              gridTemplateColumns:
+                'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '1.5rem'
+            }}
+          >
             {[
-              { 
-                title: "About Investing Copilot", 
-                desc: "Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking. We emphasize top-line data clarity over trading noise, giving investors full transparency over hard asset values and long-term equities." 
+              {
+                title: 'About Investing Copilot',
+                desc:
+                  'Investing Copilot is an independent SaaS terminal explicitly engineered for clean, dense portfolio tracking. We emphasize top-line data clarity over trading noise, giving investors full transparency over hard asset values and long-term equities.'
               },
-              { 
-                title: "Secure Integration", 
-                desc: "Your security dictates our framework. Financial transactions and data flows are natively brokered utilizing enterprise-grade tokenization and direct infrastructure pipelines." 
+              {
+                title: 'Secure Integration',
+                desc:
+                  'Your security dictates our framework. Financial transactions and data flows are natively brokered utilizing enterprise-grade tokenization and direct infrastructure pipelines.'
               },
-              { 
-                title: "Contact & Corporate", 
-                desc: "Developed and operated transparently in Philadelphia by Garden Shed Clay LLC. Reach out directly for operational inquiries or terminal platform support. Support: support@gardenshedclay.com" 
+              {
+                title: 'Contact & Corporate',
+                desc:
+                  'Developed and operated transparently in Philadelphia by Garden Shed Clay LLC. Reach out directly for operational inquiries or terminal platform support. Support: support@gardenshedclay.com'
               }
             ].map((item, i) => (
-              <div key={i} style={{ backgroundColor: 'rgba(22, 25, 32, 0.8)', border: '1px solid #374151', padding: '1.5rem', borderRadius: '12px' }}>
-                <h3 style={{ margin: '0 0 0.5rem 0' }}>{item.title}</h3>
-                <p style={{ color: '#9ca3af', fontSize: '0.9rem', margin: 0 }}>{item.desc}</p>
+              <div
+                key={i}
+                style={{
+                  backgroundColor: 'rgba(22,25,32,0.8)',
+                  border: '1px solid #374151',
+                  padding: '1.5rem',
+                  borderRadius: '12px'
+                }}
+              >
+                <h3
+                  style={{
+                    margin: '0 0 0.5rem 0'
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+                <p
+                  style={{
+                    color: '#d1d5db',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}
+                >
+                  {item.desc}
+                </p>
               </div>
             ))}
           </section>
