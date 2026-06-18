@@ -3,7 +3,8 @@ import React from 'react';
 export default function Landing() {
   return (
     <div style={{
-      backgroundImage: 'url(/public/spitfire.png)',
+      // Removed /public/ prefix
+      backgroundImage: 'url(/spitfire.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -24,7 +25,8 @@ export default function Landing() {
           backgroundColor: 'rgba(22, 25, 32, 0.6)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <img src="/public/logo.png" alt="Investing Copilot Logo" style={{ height: '32px', width: 'auto' }} />
+            {/* Removed /public/ prefix */}
+            <img src="/logo.png" alt="Investing Copilot Logo" style={{ height: '32px', width: 'auto' }} />
             <div style={{ fontWeight: 700, fontSize: '1.25rem' }}>Investing<span style={{ color: '#6366f1' }}>Copilot</span></div>
           </div>
         </header>
