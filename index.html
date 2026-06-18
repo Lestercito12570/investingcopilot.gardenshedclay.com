@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Investing Copilot</title>
 
   <style>
@@ -13,8 +13,8 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f1115;
       color: #f3f4f6;
+      background-color: #0f1115;
     }
 
     .page {
@@ -23,7 +23,6 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #0f1115;
     }
 
     .overlay {
@@ -38,7 +37,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(22, 25, 32, 0.6);
+      background-color: rgba(22, 25, 32, 0.65);
     }
 
     .brand {
@@ -54,7 +53,7 @@
       width: auto;
     }
 
-    .brand span {
+    .brand-highlight {
       color: #6366f1;
     }
 
@@ -68,8 +67,189 @@
       text-decoration: none;
     }
 
+    nav a:hover {
+      color: #ffffff;
+    }
+
     main {
       max-width: 900px;
       margin: 0 auto;
       padding: 4rem 2rem;
-      flex: 1
+      flex: 1;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #6366f1;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .intro {
+      color: #e5e7eb;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #6366f1;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.5);
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .cards {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: rgba(22, 25, 32, 0.8);
+      border: 1px solid #374151;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #d1d5db;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="overlay">
+
+      <header>
+        <div class="brand">
+          <img src="./logo.png" alt="Investing Copilot Logo">
+          <div>
+            Investing<span class="brand-highlight">Copilot</span>
+          </div>
+        </div>
+
+        <nav>
+          <a href="#about">About</a>
+          <a href="#security">Security</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+
+        <div class="eyebrow">
+          Workstation-Oriented Data Visualization
+        </div>
+
+        <h1>
+          High-Density Analytics for Hard Assets &amp; Equities
+        </h1>
+
+        <p class="intro">
+          Track your holdings, map your long-term position metrics, and gain
+          complete portfolio clarity without navigational noise or retail
+          bubble hype.
+        </p>
+
+        <a
+          class="button"
+          href="https://app.investingcopilot.gardenshedclay.com"
+        >
+          Launch Terminal
+        </a>
+
+        <section class="cards">
+
+          <div class="card" id="about">
+            <h3>About Investing Copilot</h3>
+            <p>
+              Investing Copilot is an independent SaaS terminal engineered
+              for clean, dense portfolio tracking. We emphasize top-line data
+              clarity over trading noise, giving investors transparency over
+              hard asset values and long-term equity positions.
+            </p>
+          </div>
+
+          <div class="card" id="security">
+            <h3>Secure Integration</h3>
+            <p>
+              Your security dictates our framework. Financial transactions
+              and data flows are brokered utilizing enterprise-grade
+              tokenization and direct infrastructure pipelines.
+            </p>
+          </div>
+
+          <div class="card" id="contact">
+            <h3>Contact &amp; Corporate</h3>
+            <p>
+              Developed and operated in Philadelphia by Garden Shed Clay LLC.
+              For operational inquiries or platform support:
+              support@gardenshedclay.com
+            </p>
+          </div>
+
+        </section>
+
+      </main>
+
+      <footer>
+        © 2026 Investing Copilot • Garden Shed Clay LLC
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
