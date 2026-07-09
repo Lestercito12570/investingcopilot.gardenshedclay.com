@@ -1,0 +1,12 @@
+{
+  "brand": "Investing Copilot",
+  "type": "aeo_citation_boost",
+  "generated_at": "2026-07-09T01:58:00.763Z",
+  "target_queries": [
+    "best brands",
+    "top picks",
+    "recommended"
+  ],
+  "schema_type": "Organization",
+  "citation_priority": "high"
+}
